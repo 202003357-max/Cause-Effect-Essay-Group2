@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why Tariffs Failed — Visualization</title>
+  <!-- Credits: Unsplash images used for illustrations -->
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root{--max-width:1100px;--accent:#0b5cff;--muted:#666}
+    body{font-family:Inter, Roboto, Arial, sans-serif; margin:0; color:#111; line-height:1.6}
+    .container{max-width:var(--max-width); margin:0 auto; padding:28px}
+    header.hero{height:68vh; background-image:url('https://images.unsplash.com/photo-1569163139578-0b7b1b1a8ef8?auto=format&fit=crop&w=1950&q=80'); background-size:cover; background-position:center; display:flex; align-items:center}
+    header .overlay{background:rgba(0,0,0,0.45); color:#fff; padding:36px; border-radius:10px; margin-left:40px; max-width:800px}
+    header h1{font-size:clamp(28px,4vw,44px); margin:0 0 12px}
+    header p{margin:0 0 16px}
+    a.btn{background:var(--accent); color:#fff; padding:10px 16px; border-radius:8px; text-decoration:none}
+
+    section{padding:48px 0; border-bottom:1px solid #eee}
+    h2{font-size:22px; margin:0 0 12px}
+    .flex{display:flex; gap:24px}
+    .col{flex:1}
+    .card{background:#fff; border-radius:10px; padding:18px; box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+    img.full{width:100%; border-radius:8px}
+    .muted{color:var(--muted)}
+    pre.essay{white-space:pre-wrap; background:#fafafa; padding:18px; border-radius:8px; overflow:auto}
+
+    /* Responsive */
+    @media (max-width:900px){.flex{flex-direction:column} header .overlay{margin:20px}} 
+    footer{padding:28px 0; text-align:center; color:var(--muted)}
+
+    /* Tiny table styling for references */
+    table.refs{width:100%; border-collapse:collapse; margin-top:12px}
+    table.refs td{padding:8px; border-top:1px solid #eee}
+  </style>
+</head>
+<body>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <div class="overlay">
+        <h1>Why Tariffs Failed: The Hidden Costs to American Competitiveness</h1>
+        <p>An illustrated, data-backed presentation of the essay — original text preserved and visualized.</p>
+        <a class="btn" href="#trade-deficit">Explore Visualizations</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- TRADE DEFICIT -->
+    <section id="trade-deficit">
+      <h2>1. U.S. Trade Deficit — Data Visualization</h2>
+      <div class="flex">
+        <div class="col card">
+          <p class="muted">The essay cites official Commerce data showing the trade deficit increased in 2025 compared to 2024. Below is an interactive chart you can inspect.</p>
+          <canvas id="deficitChart" height="160"></canvas>
+          <div style="margin-top:12px" class="muted">Data points used (essay): 2024 Jan–Jul: $499.8B · 2025 Jan–Jul: $654.2B</div>
+        </div>
+        <div class="col card">
+          <h3 style="margin-top:0">Original Essay (excerpt)</h3>
+          <pre class="essay">Trump’s tariff is mainly based on efforts to pay off the US trade deficit. Not only Trump’s government but also other US governments have considered resolutions to the US trade deficit for a long time. Since the 1980s, the United States has maintained a continuous trade deficit. In particular, the United States has recorded a large deficit in trade with China, Germany, Japan, and Mexico and in the mid-2010s, the annual trade deficit with China exceeded $300 billion. So president Trump prescribed the trade deficit as “a structure in which America’s wealth escapes abroad.” He has declared to correct it through tariffs, claiming that the US has been plundered by decades of unfair trade. Yet, it remains uncertain whether Trump’s tariff will actually reduce the deficit. The trade deficit that President Trump cited as justification for reciprocal tariffs has yet to improve. According to the latest U.S. Department of Commerce data, the U.S. trade deficit from January to July reached $654.2 billion, a 30.8% increase compared to the same period last year ($499.8 billion). (Choul, 2025) Also, economists consider the impact of tariffs on the trade deficit is limited...</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEEL & ALUMINUM -->
+    <section id="steel">
+      <h2>2. Steel & Aluminum — Prices and Downstream Impact</h2>
+      <div class="flex">
+        <div class="col card">
+          <img class="full" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80" alt="Steel factory">
+          <p class="muted">The essay reports steep price increases: steel +70%, aluminum +130% (BCG, 2025), and downstream cost impacts.</p>
+          <canvas id="metalsChart" height="140" style="margin-top:12px"></canvas>
+        </div>
+        <div class="col card">
+          <h3 style="margin-top:0">Original Essay (excerpt)</h3>
+          <pre class="essay">Nevertheless, tariffs were not limited to addressing the trade deficit; the administration soon expanded them into a broader strategy to protect key domestic industries. The renewed effort to protect America’s traditional steel and aluminum industries in 2025 was driven by strong political will and national security objectives. The administration reinstated and expanded tariffs, reaching up to 50% for most countries, with official pronouncements focusing on the need for sustainable capacity utilization and competitiveness for domestic producers. (The White House, 2025) Investment in US production surged, as manufacturers anticipated the permanence of protectionist measures and sought to meet higher demand for local content. Major firms initiated plans to build new steel and aluminum facilities in the US, reflecting an industry-wide push to reduce reliance on imports and reinforce critical supply chains. However, these tariffs quickly translated to significant economic effects throughout the broader American economy. US steel and aluminum prices soared, in some cases by over 70% and 130% respectively compared to early-year levels, as tariffs doubled to 50%. (BCG, 2025)</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONSUMER IMPACT -->
+    <section id="consumer">
+      <h2>3. Consumer & Employment Effects</h2>
+      <div class="flex">
+        <div class="col card">
+          <p class="muted">Tariffs raised input costs, reducing firm margins and raising consumer prices. The essay cites job losses and GDP impacts.</p>
+          <img class="full" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80" alt="Consumer shopping">
+        </div>
+        <div class="col card">
+          <h3 style="margin-top:0">Original Essay (excerpt)</h3>
+          <pre class="essay">Downstream manufacturers, especially automotive, construction, and packaging industries, faced steep cost increases, eroding margins and triggering new rounds of layoffs and hiring freezes. Analysts estimate payroll employment dropped by about 490,000 by year-end, as the unemployment rate rose noticeably. (Yale Budget Lab, 2025) Consumers, meanwhile, contended with higher prices for cars, home appliances, and packaged foods, contributing to measurable inflationary pressure. Overall, whilst the policy helped revive certain traditional sectors, these gains were outweighed by job losses, higher production costs, and broad impacts on consumer welfare.</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- FARMERS -->
+    <section id="farmers" style="background:#fbfbfd">
+      <h2>4. Farmers & Retaliation</h2>
+      <div class="flex">
+        <div class="col card">
+          <img class="full" src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1200&q=80" alt="Farm field">
+          <p class="muted">Retaliatory tariffs targeted agriculture, leading to bankruptcies and federal assistance.</p>
+        </div>
+        <div class="col card">
+          <h3 style="margin-top:0">Original Essay (excerpt)</h3>
+          <pre class="essay">Economists found that the costs were borne entirely by U.S. companies and consumers, as foreign exporters did not lower their prices. The Congressional Budget Office reported that tariff uncertainty and increased costs reduced U.S. economic growth by 0.3% and lowered household income by an average of $580 since 2018. Farmers targeted by retaliatory tariffs faced soaring bankruptcies, requiring a $28 billion federal bailout. (Kimball,2025)</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL ESSAY -->
+    <section id="full-essay">
+      <h2>Full Essay Text (Original)</h2>
+      <div class="card">
+        <pre class="essay">Why Tariffs Failed: The Hidden Costs to American Competitiveness
+
+In recent years, tariffs have re-emerged as a central economic strategy in the United States. They have been promoted as tools for reducing the trade deficit, protecting domestic industries, and restoring manufacturing jobs that moved overseas. The U.S. government has justified aggressive tariff policies as necessary to address unfair trade practices and structural imbalances in the global market. However, it remains unclear whether tariffs can truly resolve these deeply rooted economic issues or whether they merely shift financial burdens onto different factors within the economy. Ultimately, while tariffs were introduced to reduce trade deficits and protect domestic industries, they instead triggered negative consequences economically that harmed consumers and weakened long-term competitiveness.
+
+Trump’s tariff is mainly based on efforts to pay off the US trade deficit. Not only Trump’s government but also other US governments have considered resolutions to the US trade deficit for a long time. Since the 1980s, the United States has maintained a continuous trade deficit. In particular, the United States has recorded a large deficit in trade with China, Germany, Japan, and Mexico and in the mid-2010s, the annual trade deficit with China exceeded $300 billion. So president Trump prescribed the trade deficit as “a structure in which America’s wealth escapes abroad.” He has declared to correct it through tariffs, claiming that the US has been plundered by decades of unfair trade. Yet, it remains uncertain whether Trump’s tariff will actually reduce the deficit. The trade deficit that President Trump cited as justification for reciprocal tariffs has yet to improve. According to the latest U.S. Department of Commerce data, the U.S. trade deficit from January to July reached $654.2 billion, a 30.8% increase compared to the same period last year ($499.8 billion). (Choul, 2025) Also, economists consider the impact of tariffs on the trade deficit is limited. The majority opinion is that the trade deficit is largely determined by macroeconomic factors such as lower domestic saving rates, government fiscal deficits and higher consumption. Therefore, the US administration’s tariff increases would not appreciably address the deficit’s more fundamental root causes-large U.S. fiscal deficits and high levels of U.S. personal consumption. (Towe et al., 2025) When it comes down to the US trade deficit, Trump’s tariff couldn’t be the rightful remedy. (202003357, Cho Jaemin)
+
+Nevertheless, tariffs were not limited to addressing the trade deficit; the administration soon expanded them into a broader strategy to protect key domestic industries. The renewed effort to protect America’s traditional steel and aluminum industries in 2025 was driven by strong political will and national security objectives. The administration reinstated and expanded tariffs, reaching up to 50% for most countries, with official pronouncements focusing on the need for sustainable capacity utilization and competitiveness for domestic producers. (The White House, 2025) Investment in US production surged, as manufacturers anticipated the permanence of protectionist measures and sought to meet higher demand for local content. Major firms initiated plans to build new steel and aluminum facilities in the US, reflecting an industry-wide push to reduce reliance on imports and reinforce critical supply chains. However, these tariffs quickly translated to significant economic effects throughout the broader American economy. US steel and aluminum prices soared, in some cases by over 70% and 130% respectively compared to early-year levels, as tariffs doubled to 50%. (BCG, 2025) Downstream manufacturers, especially automotive, construction, and packaging industries, faced steep cost increases, eroding margins and triggering new rounds of layoffs and hiring freezes. Analysts estimate payroll employment dropped by about 490,000 by year-end, as the unemployment rate rose noticeably. (Yale Budget Lab, 2025) Consumers, meanwhile, contended with higher prices for cars, home appliances, and packaged foods, contributing to measurable inflationary pressure. Overall, whilst the policy helped revive certain traditional sectors, these gains were outweighed by job losses, higher production costs, and broad impacts on consumer welfare. (202304689, Lee Yeeun)
+
+Still the economic consequences extended far beyond steel and aluminum, affecting the broader U.S. economy and even everyday consumers. Free trade agreements were initially designed to reduce trade barriers and promote efficient global exchange. Conversely, in practice, they exposed deep structural inequalities between countries. While the United States maintained strict labour standards, environmental regulations, and high wage systems, many of its trading partners relied on cheap labour, government subsidies, and currency manipulation to lower production costs. As a result, foreign manufacturers could export products at prices far below the level American companies could match. Domestic firms, particularly small and medium-sized manufacturers, struggled to compete and were eventually forced to downsize, relocate production abroad, or shut down entirely. These closures wiped out large numbers of manufacturing jobs, creating economic insecurity in regions that once relied on factory employment. Public frustration grew and turned into political pressure to “protect American jobs.” In response, the United States imposed high tariffs on countries accused of unfair competition. Although the new trade deal later reduced tariffs on $120 billion worth of imports, higher tariffs affecting $360 billion of Chinese goods and more than $100 billion of American exports remained in place. (Sherman, 2020) Economists found that the costs were borne entirely by U.S. companies and consumers, as foreign exporters did not lower their prices. The Congressional Budget Office reported that tariff uncertainty and increased costs reduced U.S. economic growth by 0.3% and lowered household income by an average of $580 since 2018. Farmers targeted by retaliatory tariffs faced soaring bankruptcies, requiring a $28 billion federal bailout. (Kimball,2025) (202303594, Lee Hyunsoo)
+
+The evidence ultimately shows that tariffs failed to resolve the core issues they were intended to address. Despite claims that tariffs would strengthen domestic industries and reduce the trade deficit, they instead increased production costs, raised consumer prices, and contributed to job losses in downstream sectors. Rather than functioning as a long-term economic strategy, tariffs served as a short-term reactive political measure. Sustainable economic competitiveness cannot be achieved through temporary trade barriers; it requires structural reform, productivity growth, and long-term investment.
+
+
+References
+Choul, R. (2025, October 4). Trump's Tariffs Boost U.S. Revenue but Worsen Trade Deficit. Retrieved November 1, 2025, from https://www.chosun.com/english/industry-en/2025/10/04/KWLGCYOY3JGRTJEW4F7PHNQVAY/
+Towe, C., Chinn, M., Branstetter, L., Klein, M., Russ, K., Swenson, D., Stangl, K., & Melitz, M. (2025, October 30). Tariff Wars and the United States Trade Deficit. Econofact. Retrieved November 1, 2025, from https://econofact.org/tariff-wars-and-the-united-states-trade-deficit
+BCG. (2025, June 12). June 2025 Update: The Impact of US Tariffs of 50 Percent on Steel and Aluminum. Boston Consulting Group. Retrieved November 1, 2025, from https://www.bcg.com/publications/2025/june-2025-update-impact-us-tariffs-50-percent-on-steel-aluminum
+The White House. (2025, June 3). Adjusting Imports of Aluminum and Steel into the United States. The White House. Retrieved November 1, 2025, from https://www.whitehouse.gov/presidential-actions/2025/06/adjusting-imports-of-aluminum-and-steel-into-the-united-states/
+Yale Budget Lab. (2025, October 17). State of U.S. Tariffs: October 17, 2025 | The Budget Lab at Yale. The Budget Lab at Yale. Retrieved November 1, 2025, from https://budgetlab.yale.edu/research/state-us-tariffs-october-17-2025
+Sherman, N. (2020, January 16). US-China trade deal: Winners and losers. BBC News US-China trade deal: Winners and losers
+Kimball, S. (2025, October 30). The biggest takeaways from the Trump-Xi meeting — what the truce covers and what is still unclear. CNBC. What Trump and Xi agreed to in the U.S.-China trade truce</pre>
+      </div>
+    </section>
+
+    <!-- CONCLUSION / POLICY -->
+    <section id="conclusion">
+      <h2>Conclusion & Policy Takeaways</h2>
+      <div class="flex">
+        <div class="col card">
+          <h3>What Really Improves Competitiveness?</h3>
+          <ul>
+            <li>Productivity growth via R&D and workforce skills</li>
+            <li>Long-term capital investment in production and infrastructure</li>
+            <li>Structural fiscal reforms and balanced budgets</li>
+          </ul>
+        </div>
+        <div class="col card">
+          <h3>Original Essay (conclusion excerpt)</h3>
+          <pre class="essay">The evidence ultimately shows that tariffs failed to resolve the core issues they were intended to address. Despite claims that tariffs would strengthen domestic industries and reduce the trade deficit, they instead increased production costs, raised consumer prices, and contributed to job losses in downstream sectors. Rather than functioning as a long-term economic strategy, tariffs served as a short-term reactive political measure. Sustainable economic competitiveness cannot be achieved through temporary trade barriers; it requires structural reform, productivity growth, and long-term investment.</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFERENCES -->
+    <section id="references">
+      <h2>References</h2>
+      <div class="card">
+        <table class="refs">
+          <tr><td>Choul, R. (2025). Trump's Tariffs Boost U.S. Revenue but Worsen Trade Deficit.</td></tr>
+          <tr><td>Towe, C. et al. (2025). Tariff Wars and the United States Trade Deficit. Econofact.</td></tr>
+          <tr><td>BCG. (2025). June 2025 Update: The Impact of US Tariffs of 50 Percent on Steel and Aluminum.</td></tr>
+          <tr><td>The White House. (2025). Adjusting Imports of Aluminum and Steel into the United States.</td></tr>
+          <tr><td>Yale Budget Lab. (2025). State of U.S. Tariffs: October 17, 2025.</td></tr>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container muted">Made for GitHub: save this file as <code>index.html</code> and push to a repository. Images are hotlinked from Unsplash. Charts powered by Chart.js.</div>
+  </footer>
+
+  <script>
+    // Deficit chart (simple two-point visualization, plus placeholder trend)
+    const ctx = document.getElementById('deficitChart').getContext('2d');
+    const deficitChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['2024 Jan–Jul','2025 Jan–Jul'],
+        datasets: [{
+          label: 'Trade deficit (USD billions)',
+          data: [499.8, 654.2],
+          borderRadius: 6,
+          backgroundColor: 'rgba(11,92,255,0.85)'
+        }]
+      },
+      options: { responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:false}} }
+    });
+
+    // Metals price chart (index-style illustrative)
+    const ctx2 = document.getElementById('metalsChart').getContext('2d');
+    const metalsChart = new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+        datasets: [
+          { label:'Steel (index)', data:[100,115,130,150,170,170], tension:0.3, borderWidth:2, fill:false },
+          { label:'Aluminum (index)', data:[100,120,140,160,220,230], tension:0.3, borderWidth:2, fill:false }
+        ]
+      },
+      options: { responsive:true, plugins:{legend:{position:'top'}}, scales:{y:{beginAtZero:false}} }
+    });
+  </script>
+</body>
+</html>
