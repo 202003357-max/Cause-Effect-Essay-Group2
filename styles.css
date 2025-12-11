@@ -1,0 +1,113 @@
+/* ---------------------------------------------------------
+   Global Styles
+--------------------------------------------------------- */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+  color: #222;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---------------------------------------------------------
+   Header / Hero Section
+--------------------------------------------------------- */
+.hero {
+  background: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d') center/cover no-repeat;
+  color: white;
+  padding: 120px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 20px auto 0;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* ---------------------------------------------------------
+   Section Layouts
+--------------------------------------------------------- */
+section {
+  padding: 60px 0;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.text-block {
+  font-size: 1.05rem;
+  white-space: pre-line;
+}
+
+/* ---------------------------------------------------------
+   Grid Layouts
+--------------------------------------------------------- */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+@media (max-width: 800px) {
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------------------------------------------------
+   Cards
+--------------------------------------------------------- */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+/* ---------------------------------------------------------
+   Footer
+--------------------------------------------------------- */
+footer {
+  background: #222;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: #81c9ff;
+}
